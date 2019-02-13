@@ -7645,6 +7645,11 @@ ttsspd(cps) int cps; {
 #ifdef B921600
       case 92160: s = B921600; break;
 #endif /* B921600 */
+
+#ifdef B1500000
+      case 150000: s = B1500000; break;
+#endif /* B1500000 */
+
 #endif /* HPUX */
       default:
 	ok = 0;				/* Good speed not found, so not ok */
@@ -7953,6 +7958,12 @@ ttspdlist() {
     debug(F101,"ttspdlist B921600","",B921600);
     spdlist[i++] = 921600L;
 #endif /* B921600 */
+
+#ifdef B1500000
+    debug(F101,"ttspdlist B1500000","",B1500000);
+    spdlist[i++] = 1500000;
+#endif /* B1500000 */
+
 #endif /* USETCSETSPEED */
     spdlist[0] = i - 1;			/* Return count in 0th element */
     debug(F111,"ttspdlist spdlist","0",spdlist[0]);
@@ -8218,6 +8229,9 @@ ttgspd() {				/* Get current serial device speed */
 #endif /* HPUX */
 #ifdef B921600
       case B921600: ss = 921600L; break;
+#endif /* B921600 */
+#ifdef B1500000
+      case B1500000: ss = 1500000; break;
 #endif /* B921600 */
       default:
 	ss = -1; break;

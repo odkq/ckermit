@@ -4138,6 +4138,9 @@ _PROTOTYP( long * ttspdlist, (void) );
 #endif /* SCO_OSR504 */
 #endif /* NOB_921K */
 
+#ifdef BPS_1500K
+#define MAX_SPD 1500000L
+#else
 #ifdef BPS_921K				/* Maximum speed defined */
 #define MAX_SPD 921600L
 #else
@@ -4169,6 +4172,7 @@ _PROTOTYP( long * ttspdlist, (void) );
 #define MAX_SPD 14400L
 #else
 #define MAX_SPD 9600L
+#endif
 #endif
 #endif
 #endif

@@ -513,6 +513,11 @@ struct keytab spdtab[] = {
 #ifdef BPS_150
   "150",     15,  0,
 #endif /* BPS_150 */
+
+#ifdef BPS_1500K
+  "1500000", 150000,0,
+#endif /* BPS_1500K */
+
 #ifdef BPS_1800
   "1800",     180,  0,
 #endif /* BPS_150 */
@@ -572,6 +577,7 @@ struct keytab tnspdtab[] = {            /* RFC 2217 TELNET COMPORT Option */
     "115200", 11520,  0,                /* (add any other defined speeds) */
     "1200",     120,  0,
     "14400",   1440,  0,
+    "1500000",  150000,  0,
     "19200",   1920,  0,
     "230400", 23040,  0,
     "2400",     240,  0,
